@@ -28,10 +28,10 @@ const Header = (props) => {
                     <Nav className="mr-auto" navbar>
                         
                         <NavItem>
-                            <NavLink href="/sorting-visualizer/#/selectionsort">Selection Sort</NavLink>
+                            <NavLink href="/sort/#/selectionsort">Selection Sort</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/sorting-visualizer/#/insertionsort">Insertion Sort</NavLink>
+                            <NavLink href="/sort/#/insertionsort">Insertion Sort</NavLink>
                         </NavItem>
                     </Nav>
                 </Collapse>
