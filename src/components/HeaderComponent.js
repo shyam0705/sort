@@ -27,13 +27,13 @@ const Header = (props) => {
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
                         <NavItem>
-                            <NavLink href="/bubblesort">Bubble Sort</NavLink>
+                            <NavLink href="/sorting-visualizer/#/bubblesort">Bubble Sort</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/selectionsort">Selection Sort</NavLink>
+                            <NavLink href="/sorting-visualizer/#/selectionsort">Selection Sort</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/insertionsort">Insertion Sort</NavLink>
+                            <NavLink href="/sorting-visualizer/#/insertionsort">Insertion Sort</NavLink>
                         </NavItem>
                     </Nav>
                 </Collapse>

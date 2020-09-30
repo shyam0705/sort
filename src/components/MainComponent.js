@@ -17,13 +17,13 @@ class Main extends Component {
             <div>
                 <Header/>
                 <Switch>
-                    <Route path="https://shyam0705.github.io/bubblesort">
+                    <Route path="/bubblesort">
                         <BubbleMain />
                     </Route>
-                    <Route path="https://shyam0705.github.io/bubblesort">
+                    <Route path="/selectionsort">
                         <SelectionMain />
                     </Route>
-                    <Route path="https://shyam0705.github.io/bubblesort">
+                    <Route path="/insertionsort">
                         <InsertionMain />
                     </Route>
                 </Switch>
