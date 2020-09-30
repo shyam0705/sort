@@ -26,9 +26,7 @@ const Header = (props) => {
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
-                        <NavItem>
-                            <NavLink href="/sorting-visualizer/#/bubblesort">Bubble Sort</NavLink>
-                        </NavItem>
+                        
                         <NavItem>
                             <NavLink href="/sorting-visualizer/#/selectionsort">Selection Sort</NavLink>
                         </NavItem>
