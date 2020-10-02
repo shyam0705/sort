@@ -23,7 +23,8 @@ class BubbleMain extends Component {
             swapText: "",
             sorted: 100,
             play: false,
-            voice:false
+            voice: false,
+   
         }
     }
     componentDidMount() {
@@ -51,41 +52,42 @@ class BubbleMain extends Component {
         this.onPlay();
     }
     onPlay = async () => {
-        this.setState({play:!this.state.play})
-        const arr = this.state.arr;
-        const n = this.state.arr.length;
-        let speak = (text)=>say(text);
-        for (var i = 0; i < n - 1; i++) {
-
-           
-            for (var j = 0; j < n - i - 1; j++) {
-                this.setState({ currentIndex: j })
-                this.setState({ comparingIndex: j + 1 })
-                if (this.state.voice) { speak(`comparing  ${arr[j]} and ${arr[j + 1]}`) };
-                this.setState({ comparingText: `comparing  ${arr[j]} and ${arr[j + 1]}` })
-                this.state.voice ? await this.timer(6000) :await this.timer(1000);  
-                if (arr[j] >= arr[j + 1]) {
-                    if (this.state.voice) { speak(`${arr[j]} is greater than ${arr[j + 1]} we will swap it}`) };
-                    this.setState({ swapText: `${arr[j]} is greater than ${arr[j + 1]} we will swap it}` });
-                    this.state.voice ?await this.timer(6000) : await this.timer(1000);    
-                    var tmp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = tmp;
-                    this.setState({ arr: arr })
+      
+            this.setState({ play: !this.state.play })
+            const arr = this.state.arr;
+            const n = this.state.arr.length;
+            let speak = (text) => say(text);
+            for (var i = 0; i < n - 1; i++) {
+                for (var j = 0; j < n - i - 1; j++) {
+                    this.setState({ currentIndex: j })
+                    this.setState({ comparingIndex: j + 1 })
+                    if (this.state.voice) { speak(`comparing  ${arr[j]} and ${arr[j + 1]}`) };
+                    this.setState({ comparingText: `comparing  ${arr[j]} and ${arr[j + 1]}` })
+                    this.state.voice ? await this.timer(6000) : await this.timer(1000);
+                    if (arr[j] >= arr[j + 1]) {
+                        if (this.state.voice) { speak(`${arr[j]} is greater than ${arr[j + 1]} we will swap it}`) };
+                        this.setState({ swapText: `${arr[j]} is greater than ${arr[j + 1]} we will swap it}` });
+                        this.state.voice ? await this.timer(6000) : await this.timer(1000);
+                        var tmp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = tmp;
+                        this.setState({ arr: arr })
+                    }
+                    this.setState({ comparingText: "" });
+                    this.setState({ swapText: "" });
+                    await this.timer(1000);
                 }
-                this.setState({ comparingText: "" });
-                this.setState({ swapText: "" });
-                await this.timer(1000);  
+                this.setState({ comparingIndex: null });
+                this.setState({ currentIndex: null });
+                this.setState({ sorted: n - i - 1 });
+                await this.timer(1000);
             }
-            this.setState({ comparingIndex: null });
-            this.setState({ currentIndex: null });
-            this.setState({ sorted: n - i - 1 });
-            await this.timer(1000);
-        }
-        this.setState({ sorted: 0 });
+            this.setState({ sorted: 0 });
+
+       
     }
     onPause = async () => {
-        
+       
     }
   
     render() {
