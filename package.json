@@ -2,7 +2,7 @@
   "name": "mysort",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://shyam0705.github.io/sort",
+  "homepage": "http://shyam0705.github.io/sort/#/bubblesort",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",

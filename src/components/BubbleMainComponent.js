@@ -3,7 +3,7 @@ import { Component } from 'react';
 import styled, { css } from 'styled-components';
 import { bubble } from './algorithms/bubbleSort.js';
 import { Button, Row, ButtonGroup } from 'reactstrap';
-import { say } from './helper/speech.js';
+import { say, cancel } from './helper/speech.js';
 import AlgoInfo from './helper/algoInfo.js';
 import { BubbleSortDesc } from './helper/bubbleDesc.js';
 import { Bars } from './helper/bars.js';
@@ -12,6 +12,8 @@ import { Container } from './helper/container.js';
 import 'font-awesome/css/font-awesome.css';
 import 'bootstrap-social/bootstrap-social.css';
 import ControlPannel from './helper/ControlPannel.js';
+import { pause } from './helper/speech.js';
+import { resume } from './helper/speech.js';
 class BubbleMain extends Component {
     constructor(props) {
         super(props);
@@ -23,7 +25,7 @@ class BubbleMain extends Component {
             swapText: "",
             sorted: 100,
             play: false,
-            voice: false,
+            voice: false
    
         }
     }
@@ -52,7 +54,7 @@ class BubbleMain extends Component {
         this.onPlay();
     }
     onPlay = async () => {
-      
+           
             this.setState({ play: !this.state.play })
             const arr = this.state.arr;
             const n = this.state.arr.length;
@@ -87,9 +89,11 @@ class BubbleMain extends Component {
        
     }
     onPause = async () => {
-       
+        
     }
-  
+    componentWillUnmount() {
+        window.location.reload(true);
+    }
     render() {
         
         
@@ -106,6 +110,30 @@ class BubbleMain extends Component {
             
             <div className="container">
                 <ControlPannel play={this.state.play} voice={this.state.voice} onPlay={() => this.onPlay()} onPause={() => this.onPause()} repeat={() => this.repeat()} voiceControl={() => this.voiceControl()} />
+                <div className="row">
+                    <div className="col-1">
+                    <span style={{
+                        height:"20px",width: "20px", backgroundColor: "green",
+                        borderRadius: "50%",
+                        display: "inline-block"
+                        }}></span>
+                    <span style={{
+                        height: "15px", width: "15px",
+                        display: "inline-block"
+                        }}>Sorted</span>
+                    </div>
+                    <div className="col-1 ml-2">
+                    <span style={{
+                        height: "20px", width: "20px", backgroundColor: "red",
+                        borderRadius: "50%",
+                        display: "inline-block"
+                    }}></span>
+                    <span style={{
+                        height: "15px", width: "15px",
+                        display: "inline-block"
+                    }}>Comparing</span>
+                    </div>
+                </div>
                 <div className="row">
                     <Container className="col-md-8 col-sm-12">
                         {list}

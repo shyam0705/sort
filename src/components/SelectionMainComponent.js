@@ -63,6 +63,7 @@ class SelectionMain extends Component {
         return new Promise(res => setTimeout(res, ms));
     }
     onPlay = async () => {
+        this.setState({ play: true });
         let speak = (text) => say(text);
         const arr = this.state.arr;
         const n = arr.length;
@@ -111,6 +112,9 @@ class SelectionMain extends Component {
     onPause = async () => {
 
     }
+    componentWillUnmount() {
+        window.location.reload(true);
+    }
     render() {
         const Bars = styled.div`
         display:flex;
@@ -150,6 +154,41 @@ class SelectionMain extends Component {
         return (
             <div className="container">
                 <ControlPannel play={this.state.play} voice={this.state.voice} onPlay={() => this.onPlay()} onPause={() => this.onPause()} repeat={() => this.repeat()} voiceControl={() => this.voiceControl()} />
+                <div className="row">
+                    <div className="col-1">
+                        <span style={{
+                            height: "20px", width: "20px", backgroundColor: "green",
+                            borderRadius: "50%",
+                            display: "inline-block"
+                        }}></span>
+                        <span style={{
+                            height: "15px", width: "15px",
+                            display: "inline-block"
+                        }}>Sorted</span>
+                    </div>
+                    <div className="col-1 ml-3">
+                        <span style={{
+                            height: "20px", width: "20px", backgroundColor: "blue",
+                            borderRadius: "50%",
+                            display: "inline-block"
+                        }}></span>
+                        <span style={{
+                            height: "15px", width: "15px",
+                            display: "inline-block"
+                        }}>Current</span>
+                    </div>
+                    <div className="col-1 ml-3">
+                        <span style={{
+                            height: "20px", width: "20px", backgroundColor: "red",
+                            borderRadius: "50%",
+                            display: "inline-block"
+                        }}></span>
+                        <span style={{
+                            height: "15px", width: "15px",
+                            display: "inline-block"
+                        }}>min</span>
+                    </div>
+                </div>
                 <div className="row">
                     <Container className="col-md-8 col-sm-12">
                         {list}

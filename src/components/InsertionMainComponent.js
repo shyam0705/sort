@@ -118,6 +118,12 @@ class InsertionMain extends Component {
     showDetails = () => {
         this.setState({show:!this.state.show})
     }
+    componentWillUnmount() {
+        window.location.reload(true);
+    }
+    onPause = async () => {
+
+    }
     
     render() {
         
