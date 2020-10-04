@@ -26,6 +26,9 @@ class Main extends Component {
                     <Route path="/insertionsort">
                         <InsertionMain />
                     </Route>
+                    <Route exact path="/">
+                        <Redirect to="/bubblesort"/>
+                    </Route>
                 </Switch>
             </div>
             )
