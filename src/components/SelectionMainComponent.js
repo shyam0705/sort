@@ -166,7 +166,7 @@ class SelectionMain extends Component {
                             display: "inline-block"
                         }}>Sorted</span>
                     </div>
-                    <div className="col-1 ml-3">
+                    <div className="col-1 ml-4">
                         <span style={{
                             height: "20px", width: "20px", backgroundColor: "blue",
                             borderRadius: "50%",
@@ -177,7 +177,7 @@ class SelectionMain extends Component {
                             display: "inline-block"
                         }}>Current</span>
                     </div>
-                    <div className="col-1 ml-3">
+                    <div className="col-1 ml-4">
                         <span style={{
                             height: "20px", width: "20px", backgroundColor: "red",
                             borderRadius: "50%",
