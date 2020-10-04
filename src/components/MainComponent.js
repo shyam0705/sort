@@ -1,6 +1,6 @@
 import React from 'react';
 import { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import BubbleMain from './BubbleMainComponent';
 import SelectionMain from './SelectionMainComponent';
 import Header from './HeaderComponent.js';
