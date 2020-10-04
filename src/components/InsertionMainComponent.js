@@ -119,7 +119,9 @@ class InsertionMain extends Component {
         this.setState({show:!this.state.show})
     }
     componentWillUnmount() {
-        window.location.reload(true);
+        if (this.state.voice) {
+            window.location.reload(true);
+        }
     }
     onPause = async () => {
 

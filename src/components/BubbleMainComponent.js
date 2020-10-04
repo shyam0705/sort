@@ -92,7 +92,9 @@ class BubbleMain extends Component {
         
     }
     componentWillUnmount() {
-        window.location.reload(true);
+        if (this.state.voice) {
+            window.location.reload(true);
+        }
     }
     render() {
         

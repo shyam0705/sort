@@ -113,7 +113,9 @@ class SelectionMain extends Component {
 
     }
     componentWillUnmount() {
-        window.location.reload(true);
+        if (this.state.voice) {
+            window.location.reload(true);
+        }
     }
     render() {
         const Bars = styled.div`
